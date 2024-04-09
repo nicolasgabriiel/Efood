@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const cores = {
   branca: '#fff',
@@ -20,4 +20,9 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+`
+export const Logo = styled.img`
+  display: block;
+  height: 58px;
+  margin: 0 auto;
 `

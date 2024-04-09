@@ -6,17 +6,13 @@ export const HeaderContainer = styled.header`
   background-size: cover;
   margin: 0 auto;
 `
-export const Logo = styled.img`
-  display: block;
-  height: 58px;
-  margin: 0 auto 138px auto;
-`
+
 export const Title = styled.h1`
   font-size: 36px;
   font-weight: 900;
   line-height: 42px;
   max-width: 540px;
   text-align: center;
-  margin: 0 auto;
+  margin: 138px auto 0 auto;
   color: ${cores.rosa};
 `

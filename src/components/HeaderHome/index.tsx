@@ -1,7 +1,8 @@
 import background from '../../assets/images/background-header.svg'
 import logo from '../../assets/images/logo.svg'
+import { Logo } from '../../styles'
 
-import { HeaderContainer, Logo, Title } from './style'
+import { HeaderContainer, Title } from './style'
 
 const Header = () => (
   <>
