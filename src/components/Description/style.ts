@@ -8,6 +8,6 @@ export interface Props {
 
 export const ContainerDescription = styled.p<Props>`
   font-size: 14px;
-  line-heigth: 22px;
+  line-height: 22px;
   color: ${(Props) => Props.color};
 `

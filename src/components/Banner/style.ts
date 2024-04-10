@@ -7,6 +7,7 @@ export const BannerContainer = styled.div`
   position: relative;
   .container {
     padding: 25px 0 32px 0;
+    z-index: 1;
   }
   ::after {
     content: '';
