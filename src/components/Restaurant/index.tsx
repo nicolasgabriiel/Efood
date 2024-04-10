@@ -42,7 +42,7 @@ const Restaurant = () => (
             Experimente o Japão sem sair do lar com nosso delivery!
           </Description>
         </ContainerDescription>
-        <Link to={'/'}>
+        <Link to={'/restaurant'}>
           <Tag size="big">Saiba Mais</Tag>
         </Link>
       </ContainerText>
