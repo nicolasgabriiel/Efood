@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ContainerFooter = styled.footer`
   padding: 40px 0;
@@ -29,4 +29,7 @@ export const Copywrite = styled.p`
   color: ${cores.rosa};
   max-width: 480px;
   text-align: center;
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 80%;
+  }
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const HeaderContainer = styled.header`
   padding: 40px 0 65px 0;
@@ -13,6 +13,15 @@ export const HeaderContainer = styled.header`
     .link {
       border: none;
       text-decoration: none;
+    }
+    @media (max-width: ${breakpoints.desktop}) {
+      max-width: 80%;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
   }
 `

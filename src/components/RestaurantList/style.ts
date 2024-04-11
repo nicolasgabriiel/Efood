@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ContainerList = styled.section`
   background-color: ${cores.begeClaro};
@@ -15,5 +15,8 @@ export const List = styled.ul`
   li {
     heigth: 1000px;
     mix-heigth: 472px;
+  }
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr;
   }
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { ButtonCard } from '../Products/style'
 
 export const ContainerList = styled.section`
@@ -12,6 +12,13 @@ export const List = styled.ul`
   grid-gap: 32px;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: stretch;
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `
 export const Modal = styled.div`
   position: fixed;
@@ -46,6 +53,15 @@ export const ModalContent = styled.div`
   background-color: ${cores.rosa};
   display: flex;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 80%;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 80%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .close {
     position: absolute;
     width: 16px;
@@ -58,6 +74,11 @@ export const ModalContent = styled.div`
     height: 280px;
     object-fit: cover;
     display: block;
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+    }
   }
   .container-text {
     margin-left: 24px;
