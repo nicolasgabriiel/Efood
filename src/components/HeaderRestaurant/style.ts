@@ -20,4 +20,5 @@ export const Text = styled.h2`
   font-weight: 900;
   color: ${cores.rosa};
   font-size: 18px;
+  cursor: pointer;
 `

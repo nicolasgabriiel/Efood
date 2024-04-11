@@ -8,15 +8,17 @@ export const BannerContainer = styled.div`
   .container {
     padding: 25px 0 32px 0;
     z-index: 1;
+    position: relative;
   }
-  ::after {
-    content: '';
+  &::after {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.04);
+    background: #000;
+    opacity: 0.5;
+    content: '';
   }
 `
 

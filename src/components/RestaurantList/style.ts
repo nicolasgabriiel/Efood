@@ -12,4 +12,8 @@ export const List = styled.ul`
   grid-row-gap: 48px;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
+  li {
+    heigth: 1000px;
+    mix-heigth: 472px;
+  }
 `

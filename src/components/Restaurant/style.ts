@@ -5,7 +5,6 @@ import { TagContainer } from '../Tag/style'
 export const Card = styled.li`
   display: block;
   position: relative;
-  heigth: 472px;
   ${TagContainer} {
     margin-right: 8px;
   }

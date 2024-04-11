@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
+import Description from '../Description'
+import Tag from '../Tag'
 import star from '../../assets/images/star.svg'
 
-import Tag from '../Tag'
-import Description from '../Description'
-
+import { cores } from '../../styles'
 import {
   Card,
   ContainerDescription,
@@ -13,8 +15,6 @@ import {
   Title,
   Infos
 } from './style'
-import { cores } from '../../styles'
-import { Link } from 'react-router-dom'
 
 type Props = {
   title: string

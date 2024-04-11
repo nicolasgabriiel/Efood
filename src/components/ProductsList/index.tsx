@@ -1,14 +1,20 @@
-import { useEffect, useState } from 'react'
-import Products from '../Products'
-import { List, ContainerList, Modal, ModalContent } from './style'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 
-import close from '../../assets/images/close.svg'
+import { useGetCardapiosQuery } from '../../services/api'
+import { add, open } from '../../store/reducers/cart'
+import { formataPreco } from '../../utils/functions'
+
+import Products from '../Products'
 import Description from '../Description'
 
-import { ButtonCard } from '../Products/style'
-import { useParams } from 'react-router-dom'
+import close from '../../assets/images/close.svg'
 
-interface Cardapio {
+import { ButtonCard } from '../Products/style'
+import { List, ContainerList, Modal, ModalContent } from './style'
+
+export interface Cardapio {
   id: number
   foto: string
   preco: number
@@ -16,45 +22,29 @@ interface Cardapio {
   descricao: string
   porcao: string
 }
-type Restaurant = {
-  id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio: Cardapio[]
-}
 
 const RestaurantList = () => {
+  const dispatch = useDispatch()
+
   const [isVisible, setIsVisible] = useState(false)
-  const [selectedItem, setSelectedItem] = useState<Cardapio | null>(null) // Estado para armazenar o item do cardápio selecionado
+  const [selectedItem, setSelectedItem] = useState<Cardapio | null>(null)
 
   const { id } = useParams()
 
-  const [restaurantes, setRestaurantes] = useState<Restaurant>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurantes(res))
-  }, [id])
-
-  if (!restaurantes) {
-    return <h3>Carregando...</h3>
-  }
+  const { data: restaurantes } = useGetCardapiosQuery(id!)
 
   const openModal = (cardapio: Cardapio) => {
     setIsVisible(true)
     setSelectedItem(cardapio)
   }
 
-  const formataPreco = (preco = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
+  const addToCart = () => {
+    dispatch(add(selectedItem!))
+    dispatch(open())
+  }
+
+  if (!restaurantes) {
+    return <h3>Carregando...</h3>
   }
 
   return (
@@ -97,10 +87,16 @@ const RestaurantList = () => {
             <div className="info">
               <p color={`#fff`}>Serve: {selectedItem?.porcao}</p>
             </div>
-            <ButtonCard>
-              Adicionar ao carrinho -{' '}
-              <span>{formataPreco(selectedItem?.preco)}</span>
-            </ButtonCard>
+            <div onClick={addToCart}>
+              <ButtonCard
+                onClick={() => {
+                  setIsVisible(false)
+                }}
+              >
+                Adicionar ao carrinho -{' '}
+                <span>{formataPreco(selectedItem?.preco)}</span>
+              </ButtonCard>
+            </div>
           </div>
         </ModalContent>
         <div
