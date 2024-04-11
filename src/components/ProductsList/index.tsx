@@ -31,7 +31,7 @@ const RestaurantList = () => {
 
   const { id } = useParams()
 
-  const { data: restaurantes } = useGetCardapiosQuery(id!)
+  const { data: restaurantes } = useGetCardapiosQuery(id || '')
 
   const openModal = (cardapio: Cardapio) => {
     setIsVisible(true)
@@ -39,14 +39,15 @@ const RestaurantList = () => {
   }
 
   const addToCart = () => {
-    dispatch(add(selectedItem!))
-    dispatch(open())
+    if (selectedItem) {
+      dispatch(add(selectedItem))
+      dispatch(open())
+    }
   }
 
   if (!restaurantes) {
     return <h3>Carregando...</h3>
   }
-
   return (
     <>
       <ContainerList>
