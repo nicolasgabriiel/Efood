@@ -3,7 +3,7 @@ import Props from './index'
 
 export interface Props {
   color: string
-  children: string
+  children?: string
 }
 
 export const ContainerDescription = styled.p<Props>`

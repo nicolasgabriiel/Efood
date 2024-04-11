@@ -3,10 +3,9 @@ import { cores } from '../../styles'
 import { TagContainer } from '../Tag/style'
 
 export const Card = styled.li`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: block;
   position: relative;
+  heigth: 472px;
   ${TagContainer} {
     margin-right: 8px;
   }
@@ -16,6 +15,7 @@ export const Image = styled.img`
   display: block;
   width: 100%;
   height: 218px;
+  object-fit: cover;
 `
 export const ContainerText = styled.div`
   padding: 8px;

@@ -11,6 +11,7 @@ export const List = styled.ul`
   display: grid;
   grid-gap: 32px;
   grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
 `
 export const Modal = styled.div`
   position: fixed;
@@ -69,6 +70,11 @@ export const ModalContent = styled.div`
   }
   .info {
     margin: 22px 0 15px 0;
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      color: #fff;
+    }
   }
   ${ButtonCard} {
     display: inline-block;

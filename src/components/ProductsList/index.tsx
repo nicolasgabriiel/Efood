@@ -1,28 +1,81 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Products from '../Products'
 import { List, ContainerList, Modal, ModalContent } from './style'
 
 import close from '../../assets/images/close.svg'
-import pizza from '../../assets/images/pizza.svg'
 import Description from '../Description'
 
 import { ButtonCard } from '../Products/style'
+import { useParams } from 'react-router-dom'
+
+interface Cardapio {
+  id: number
+  foto: string
+  preco: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+type Restaurant = {
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: Cardapio[]
+}
 
 const RestaurantList = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [selectedItem, setSelectedItem] = useState<Cardapio | null>(null) // Estado para armazenar o item do cardápio selecionado
+
+  const { id } = useParams()
+
+  const [restaurantes, setRestaurantes] = useState<Restaurant>()
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => setRestaurantes(res))
+  }, [id])
+
+  if (!restaurantes) {
+    return <h3>Carregando...</h3>
+  }
+
+  const openModal = (cardapio: Cardapio) => {
+    setIsVisible(true)
+    setSelectedItem(cardapio)
+  }
+
+  const formataPreco = (preco = 0) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(preco)
+  }
+
   return (
     <>
       <ContainerList>
         <div className="container">
           <List>
-            <div
-              onClick={() => {
-                setIsVisible(true)
-                console.log('cliquei')
-              }}
-            >
-              <Products></Products>
-            </div>
+            {restaurantes.cardapio.map((cardapio) => (
+              <div
+                key={cardapio.nome}
+                onClick={() => {
+                  openModal(cardapio)
+                }}
+              >
+                <Products
+                  descricao={cardapio.descricao}
+                  imagem={cardapio.foto}
+                  titulo={cardapio.nome}
+                ></Products>
+              </div>
+            ))}
           </List>
         </div>
       </ContainerList>
@@ -34,30 +87,19 @@ const RestaurantList = () => {
               alt="Ícone de fechar"
               onClick={() => {
                 setIsVisible(false)
-                console.log('cliquei')
               }}
             />
           </div>
-          <img src={pizza} />
+          <img src={selectedItem?.foto} />
           <div className="container-text">
-            <h4>Pizza Marguerita</h4>
-            <Description color={`#fff`}>
-              A pizza Margherita é uma pizza clássica da culinária italiana,
-              reconhecida por sua simplicidade e sabor inigualável. Ela é feita
-              com uma base de massa fina e crocante, coberta com molho de tomate
-              fresco, queijo mussarela de alta qualidade, manjericão fresco e
-              azeite de oliva extra-virgem. A combinação de sabores é perfeita,
-              com o molho de tomate suculento e ligeiramente ácido, o queijo
-              derretido e cremoso e as folhas de manjericão frescas, que
-              adicionam um toque de sabor herbáceo. É uma pizza simples, mas
-              deliciosa, que agrada a todos os paladares e é uma ótima opção
-              para qualquer ocasião.
-            </Description>
+            <h4>{selectedItem?.nome}</h4>
+            <Description color={`#fff`}>{selectedItem?.descricao}</Description>
             <div className="info">
-              <Description color={`#fff`}>Serve: de 2 a 3 pessoas</Description>
+              <p color={`#fff`}>Serve: {selectedItem?.porcao}</p>
             </div>
             <ButtonCard>
-              Adicionar ao carrinho - <span>R$ 60,99</span>
+              Adicionar ao carrinho -{' '}
+              <span>{formataPreco(selectedItem?.preco)}</span>
             </ButtonCard>
           </div>
         </ModalContent>

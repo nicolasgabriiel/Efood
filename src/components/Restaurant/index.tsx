@@ -1,4 +1,3 @@
-import sushi from '../../assets/images/sushi.svg'
 import star from '../../assets/images/star.svg'
 
 import Tag from '../Tag'
@@ -17,33 +16,46 @@ import {
 import { cores } from '../../styles'
 import { Link } from 'react-router-dom'
 
-const Restaurant = () => {
+type Props = {
+  title: string
+  image: string
+  infos: string
+  id: number
+  description: string
+  nota: number
+  destacado: boolean
+}
+
+const Restaurant = ({
+  title,
+  image,
+  description,
+  infos,
+  nota,
+  destacado,
+  id
+}: Props) => {
   return (
     <>
       <Card>
         <Infos>
-          <Tag>Destaque da semana</Tag>
-          <Tag>Japonesa</Tag>
+          {destacado && <Tag>Destaque da semana</Tag>}
+          <Tag>{infos}</Tag>
         </Infos>
-        <Image src={sushi} alt="Hioki Sushi" />
+        <Image src={image} alt={title} />
         <ContainerText>
           <ContainerTitle>
-            <Title>Hioki Sushi</Title>
+            <Title>{title}</Title>
             <ContainerTitle>
-              <Title>4.9</Title>
+              <Title>{nota}</Title>
               <Star src={star} />
             </ContainerTitle>
           </ContainerTitle>
           <ContainerDescription>
-            <Description color={cores.rosa}>
-              Peça já o melhor da culinária japonesa no conforto da sua casa!
-              Sushis frescos, sashimis deliciosos e pratos quentes
-              irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade
-              garantida. Experimente o Japão sem sair do lar com nosso delivery!
-            </Description>
+            <Description color={cores.rosa}>{description}</Description>
           </ContainerDescription>
 
-          <Link to={'/restaurant'}>
+          <Link to={`restaurant/${id}`}>
             <Tag size="big">Saiba mais</Tag>
           </Link>
         </ContainerText>

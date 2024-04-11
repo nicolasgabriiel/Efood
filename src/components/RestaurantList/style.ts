@@ -11,4 +11,5 @@ export const List = styled.ul`
   column-gap: 80px;
   grid-row-gap: 48px;
   grid-template-columns: 1fr 1fr;
+  align-items: stretch;
 `

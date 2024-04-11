@@ -20,6 +20,11 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+  .custom-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 `
 export const Logo = styled.img`
   display: block;
