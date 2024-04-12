@@ -16,9 +16,11 @@ const Cart = () => {
     dispatch(close())
   }
   const getTotalPrice = () => {
-    return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco!)
-    }, 0)
+    if (items) {
+      return items.reduce((acumulador, valorAtual) => {
+        return (acumulador += valorAtual.preco)
+      }, 0)
+    }
   }
   const removeItem = (id: number) => {
     dispatch(remove(id))

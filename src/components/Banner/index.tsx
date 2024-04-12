@@ -6,7 +6,7 @@ import { BannerContainer, Text, TextBold } from './style'
 
 const Banner = () => {
   const { id } = useParams()
-  const { data } = useGetCardapiosQuery(id!)
+  const { data } = useGetCardapiosQuery(id || '')
 
   return (
     <>
