@@ -23,7 +23,7 @@ export interface Cardapio {
   porcao: string
 }
 
-const RestaurantList = () => {
+const ProductsList = () => {
   const dispatch = useDispatch()
 
   const [isVisible, setIsVisible] = useState(false)
@@ -111,4 +111,4 @@ const RestaurantList = () => {
   )
 }
 
-export default RestaurantList
+export default ProductsList
