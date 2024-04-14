@@ -8,9 +8,11 @@
 -[x] Testar Responsivo
 -[x] Valdiar Formulário
 -[x] Usar Mascara no Formulário
--[ ] Implementar Loaders
--[ ] Implementar Conceitos visuais pra melhorar a Usabilidade
--[ ] Adicionar Titulos aos botões
+-[x] Implementar Loaders
+-[x] Implementar Conceitos visuais pra melhorar a Usabilidade
+  -[x] Hover
+  -[x] Disabled
+-[x] Adicionar Titulos aos botões
 -[ ] Corrigir Importações do Styled Components
 
 

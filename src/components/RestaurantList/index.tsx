@@ -1,6 +1,7 @@
 import Restaurant from '../Restaurant'
 import { List, ContainerList } from './style'
 
+import Loader from '../Loader'
 import { useGetRestaurantsQuery } from '../../services/api'
 
 const RestaurantList = () => {
@@ -28,7 +29,7 @@ const RestaurantList = () => {
       </ContainerList>
     )
   } else {
-    return <h4>Carregando</h4>
+    return <Loader />
   }
 }
 export default RestaurantList

@@ -21,15 +21,21 @@ const HeaderRestaurant = () => {
     <>
       <HeaderContainer style={{ backgroundImage: `url(${background})` }}>
         <div className="container">
-          <Link to={'/'} className="link">
+          <Link
+            to={'/'}
+            className="link"
+            title="Voltar para a página dos restaurantes"
+          >
             <Text>Restaurantes</Text>
           </Link>
           <Link to={'/'}>
             <Logo src={logo}></Logo>
           </Link>
-          <Text onClick={openCart}>
-            <span>{items.length}</span> Produto(s) no carrinho
-          </Text>
+          <button title="Ir para o carrinho">
+            <Text onClick={openCart}>
+              <span>{items.length}</span> Produto(s) no carrinho
+            </Text>
+          </button>
         </div>
       </HeaderContainer>
     </>

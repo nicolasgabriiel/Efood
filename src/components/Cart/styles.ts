@@ -3,6 +3,7 @@ import { cores } from '../../styles'
 import { ButtonCard } from '../Products/style'
 
 import lixeira from '../../assets/images/lixeira.svg'
+import { darken, lighten } from 'polished'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -48,6 +49,12 @@ export const Sidebar = styled.aside`
   ${ButtonCard} {
     max-width: 100%;
     width: 100%;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, cores.rosa)};
+    }
   }
 `
 export const Prices = styled.p`
@@ -99,6 +106,9 @@ export const CartItem = styled.li`
     bottom: 8px;
     right: 8px;
     cursor: pointer;
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `
 export const AdressContainer = styled.div`
@@ -143,9 +153,24 @@ export const AdressContainer = styled.div`
     margin-bottom: 8px;
     background-color: ${cores.bege};
     font-size: 14px;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, cores.rosa)};
+    }
   }
   .margin-top {
     margin-top: 24px;
+  }
+  .disabled {
+    background-color: ${lighten(0.1, cores.bege)};
+    color: ${lighten(0.2, cores.rosa)};
+    &:hover {
+      cursor: auto;
+      background-color: ${lighten(0.1, cores.bege)};
+      color: ${lighten(0.2, cores.rosa)};
+    }
   }
 `
 export const CardPaymentContainer = styled(AdressContainer)`
@@ -175,5 +200,11 @@ export const OrderContainer = styled.div`
     margin-bottom: 8px;
     background-color: ${cores.bege};
     font-size: 14px;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, cores.rosa)};
+    }
   }
 `

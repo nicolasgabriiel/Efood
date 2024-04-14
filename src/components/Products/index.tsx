@@ -19,7 +19,9 @@ const Restaurant = ({ imagem, titulo, descricao }: Props) => {
         <Description color={cores.bege}>
           {getDescricao(descricao, 170)}
         </Description>
-        <ButtonCard>Mais Detalhes</ButtonCard>
+        <ButtonCard title={`Ver mais detalhes sobre ${titulo}`}>
+          Mais Detalhes
+        </ButtonCard>
       </Card>
     </>
   )

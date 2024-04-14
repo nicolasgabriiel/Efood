@@ -9,7 +9,9 @@ const Header = () => (
   <>
     <HeaderContainer style={{ backgroundImage: `url(${background})` }}>
       <Link to={'/'}>
-        <Logo src={logo} />
+        <h1>
+          <Logo src={logo} title="EFOOD" />
+        </h1>
       </Link>
       <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
     </HeaderContainer>

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { breakpoints, cores } from '../../styles'
 import { ButtonCard } from '../Products/style'
+import { darken } from 'polished'
 
 export const ContainerList = styled.section`
   background-color: ${cores.begeClaro};
@@ -70,6 +71,10 @@ export const ModalContent = styled.div`
     width: 16px;
     top: 8px;
     right: 8px;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(1.2);
+    }
   }
 
   > img {
@@ -104,5 +109,10 @@ export const ModalContent = styled.div`
     display: inline-block;
     width: auto;
     padding: 4px 8px;
+    transition: 0.2s;
+    &:hover {
+      background-color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, cores.rosa)};
+    }
   }
 `

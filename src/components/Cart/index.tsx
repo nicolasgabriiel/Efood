@@ -289,9 +289,11 @@ const Cart = () => {
                 />
               </div>
               <button
-                className="margin-top"
                 onClick={() => setCartPageOpen(CartPage.Payment)}
                 disabled={checkAdressChekout()}
+                className={
+                  checkAdressChekout() ? 'margin-top disabled' : 'margin-top '
+                }
               >
                 Continuar com o Pagamento
               </button>

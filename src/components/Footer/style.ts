@@ -21,6 +21,10 @@ export const Social = styled.img`
   display: block;
   height: 24px;
   cursor: pointer;
+  transition: fill 1s ease;
+  &:hover {
+    filter: brightness(0.8);
+  }
 `
 
 export const Copywrite = styled.p`

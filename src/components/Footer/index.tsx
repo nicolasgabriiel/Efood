@@ -5,15 +5,18 @@ import logo from '../../assets/images/logo.svg'
 
 import { Logo } from '../../styles'
 import { ContainerFooter, ContainerSocial, Copywrite, Social } from './style'
+import { Link } from 'react-router-dom'
 
 const Footer = () => (
   <>
     <ContainerFooter>
-      <Logo src={logo}></Logo>
+      <Link to={'/'}>
+        <Logo src={logo} title="EFOOD"></Logo>
+      </Link>
       <ContainerSocial>
-        <Social src={instagram} />
-        <Social src={facebook} />
-        <Social src={twitter} />
+        <Social src={instagram} alt="Instagram" />
+        <Social src={facebook} alt="facebook" />
+        <Social src={twitter} alt="twitter" />
       </ContainerSocial>
       <Copywrite>
         A efood é uma plataforma para divulgação de estabelecimentos, a

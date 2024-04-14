@@ -57,7 +57,9 @@ const Restaurant = ({
             </ContainerDescription>
           </div>
           <Link to={`restaurant/${id}`}>
-            <Tag size="big">Saiba mais</Tag>
+            <Tag size="big" title={`Saiba mais sobre ${title}`}>
+              Saiba mais
+            </Tag>
           </Link>
         </ContainerText>
       </Card>

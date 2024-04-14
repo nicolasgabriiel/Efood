@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { breakpoints, cores } from '../../styles'
+import { darken } from 'polished'
 
+export const Text = styled.h2`
+  font-weight: 900;
+  color: ${cores.rosa};
+  font-size: 18px;
+  cursor: pointer;
+`
 export const HeaderContainer = styled.header`
   padding: 40px 0 65px 0;
   align-itens: center;
@@ -24,10 +31,18 @@ export const HeaderContainer = styled.header`
       gap: 12px;
     }
   }
-`
-export const Text = styled.h2`
-  font-weight: 900;
-  color: ${cores.rosa};
-  font-size: 18px;
-  cursor: pointer;
+  button {
+    background: none;
+    border: none;
+  }
+  ${Text} {
+    transition: 0.3s;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+    &:hover {
+      color: ${darken(0.05, cores.rosa)};
+      border-color: ${darken(0.05, cores.rosa)};
+    }
+  }
 `

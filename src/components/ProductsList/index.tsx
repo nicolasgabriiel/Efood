@@ -8,6 +8,7 @@ import { formataPreco } from '../../utils/functions'
 
 import Products from '../Products'
 import Description from '../Description'
+import Loader from '../Loader'
 
 import close from '../../assets/images/close.svg'
 
@@ -46,7 +47,7 @@ const ProductsList = () => {
   }
 
   if (!restaurantes) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
   return (
     <>
