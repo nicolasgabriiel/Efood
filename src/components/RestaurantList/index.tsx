@@ -1,5 +1,5 @@
 import Restaurant from '../Restaurant'
-import { List, ContainerList } from './style'
+import * as S from './style'
 
 import Loader from '../Loader'
 import { useGetRestaurantsQuery } from '../../services/api'
@@ -9,9 +9,9 @@ const RestaurantList = () => {
 
   if (restaurantes) {
     return (
-      <ContainerList>
+      <S.ContainerList>
         <div className="container">
-          <List className="custom-list">
+          <S.List className="custom-list">
             {restaurantes.map((restaurante) => (
               <Restaurant
                 key={restaurante.id}
@@ -24,9 +24,9 @@ const RestaurantList = () => {
                 destacado={restaurante.destacado}
               />
             ))}
-          </List>
+          </S.List>
         </div>
-      </ContainerList>
+      </S.ContainerList>
     )
   } else {
     return <Loader />

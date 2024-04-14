@@ -10,19 +10,10 @@ import { CartPage } from '../../utils/enums'
 
 import { clear, close, remove } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
-import { formataPreco } from '../../utils/functions'
+import { getPriceInBRL } from '../../utils/functions'
 
 import { ButtonCard } from '../Products/style'
-import {
-  Overlay,
-  CartContainer,
-  Sidebar,
-  Prices,
-  CartItem,
-  AdressContainer,
-  CardPaymentContainer,
-  OrderContainer
-} from './styles'
+import * as S from './styles'
 
 const Cart = () => {
   const dispatch = useDispatch()
@@ -169,32 +160,32 @@ const Cart = () => {
   }, [isSuccess, dispatch])
 
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
-      <Overlay onClick={closeCart} />
-      <Sidebar>
+    <S.CartContainer className={isOpen ? 'is-open' : ''}>
+      <S.Overlay onClick={closeCart} />
+      <S.Sidebar>
         {cartPageOpen === CartPage.Cart && (
           <div>
             {items.length > 0 ? (
               <>
                 <ul>
                   {items.map((item) => (
-                    <CartItem key={item.id}>
+                    <S.CartItem key={item.id}>
                       <img src={item.foto} alt={item.nome} />
                       <div>
                         <h3>{item.nome}</h3>
-                        <span>{formataPreco(item.preco)}</span>
+                        <span>{getPriceInBRL(item.preco)}</span>
                       </div>
                       <button
                         onClick={() => removeItem(item.id)}
                         type="button"
                       />
-                    </CartItem>
+                    </S.CartItem>
                   ))}
                 </ul>
-                <Prices>
+                <S.Prices>
                   <p>Valor Total</p>
-                  <p>{formataPreco(getTotalPrice())}</p>
-                </Prices>
+                  <p>{getPriceInBRL(getTotalPrice())}</p>
+                </S.Prices>
                 <ButtonCard
                   title="Clique aqui para continuar com a compra"
                   type="button"
@@ -217,7 +208,7 @@ const Cart = () => {
         )}
         <form onSubmit={form.handleSubmit}>
           {cartPageOpen === CartPage.Adress && (
-            <AdressContainer>
+            <S.AdressContainer>
               <h1>Entrega</h1>
               <div className="formGroup">
                 <label htmlFor="receiver">Quem irá receber</label>
@@ -300,12 +291,12 @@ const Cart = () => {
               <button onClick={() => setCartPageOpen(CartPage.Cart)}>
                 Voltar para o carrinho
               </button>
-            </AdressContainer>
+            </S.AdressContainer>
           )}
           {cartPageOpen === CartPage.Payment && (
-            <CardPaymentContainer>
+            <S.CardPaymentContainer>
               <h1>
-                Pagamento - Valor a Pagar {formataPreco(getTotalPrice())}{' '}
+                Pagamento - Valor a Pagar {getPriceInBRL(getTotalPrice())}{' '}
               </h1>
               <div className="formGroup">
                 <label htmlFor="cardName">Nome no cartão</label>
@@ -382,11 +373,11 @@ const Cart = () => {
               <button onClick={() => setCartPageOpen(CartPage.Adress)}>
                 Voltar para a edição de endereço
               </button>
-            </CardPaymentContainer>
+            </S.CardPaymentContainer>
           )}
         </form>
         {cartPageOpen === CartPage.Order && (
-          <OrderContainer>
+          <S.OrderContainer>
             <h1>Pedido Realizado - {data?.orderId}</h1>
             <p>
               Estamos felizes em informar que seu pedido já está em processo de
@@ -406,10 +397,10 @@ const Cart = () => {
               gastronômica. Bom apetite!
             </p>
             <button onClick={closeCart}>Concluir</button>
-          </OrderContainer>
+          </S.OrderContainer>
         )}
-      </Sidebar>
-    </CartContainer>
+      </S.Sidebar>
+    </S.CartContainer>
   )
 }
 

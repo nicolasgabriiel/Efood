@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { TagContainer } from '../Tag/style'
 
 export const Card = styled.li`
@@ -18,10 +18,10 @@ export const Image = styled.img`
 `
 export const ContainerText = styled.div`
   padding: 8px;
-  background: ${cores.branca};
-  border-bottom: 1px solid ${cores.rosa};
-  border-right: 1px solid ${cores.rosa};
-  border-left: 1px solid ${cores.rosa};
+  background: ${colors.white};
+  border-bottom: 1px solid ${colors.pink};
+  border-right: 1px solid ${colors.pink};
+  border-left: 1px solid ${colors.pink};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,7 +37,7 @@ export const ContainerTitle = styled.div`
 export const Title = styled.h3`
   font-size: 18px;
   font-weight: bold;
-  color: ${cores.rosa};
+  color: ${colors.pink};
 `
 
 export const Star = styled.img`

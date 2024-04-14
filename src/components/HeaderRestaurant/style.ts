@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { darken } from 'polished'
 
 export const Text = styled.h2`
   font-weight: 900;
-  color: ${cores.rosa};
+  color: ${colors.pink};
   font-size: 18px;
   cursor: pointer;
 `
@@ -41,8 +41,8 @@ export const HeaderContainer = styled.header`
     padding: 5px 10px;
     border-radius: 5px;
     &:hover {
-      color: ${darken(0.05, cores.rosa)};
-      border-color: ${darken(0.05, cores.rosa)};
+      color: ${darken(0.05, colors.pink)};
+      border-color: ${darken(0.05, colors.pink)};
     }
   }
 `

@@ -7,7 +7,7 @@ import background from '../../assets/images/background-header.svg'
 import logo from '../../assets/images/logo.svg'
 
 import { Logo } from '../../styles'
-import { HeaderContainer, Text } from './style'
+import * as S from './style'
 
 const HeaderRestaurant = () => {
   const dispatch = useDispatch()
@@ -19,25 +19,25 @@ const HeaderRestaurant = () => {
   }
   return (
     <>
-      <HeaderContainer style={{ backgroundImage: `url(${background})` }}>
+      <S.HeaderContainer style={{ backgroundImage: `url(${background})` }}>
         <div className="container">
           <Link
             to={'/'}
             className="link"
             title="Voltar para a página dos restaurantes"
           >
-            <Text>Restaurantes</Text>
+            <S.Text>Restaurantes</S.Text>
           </Link>
           <Link to={'/'}>
             <Logo src={logo}></Logo>
           </Link>
           <button title="Ir para o carrinho">
-            <Text onClick={openCart}>
+            <S.Text onClick={openCart}>
               <span>{items.length}</span> Produto(s) no carrinho
-            </Text>
+            </S.Text>
           </button>
         </div>
-      </HeaderContainer>
+      </S.HeaderContainer>
     </>
   )
 }

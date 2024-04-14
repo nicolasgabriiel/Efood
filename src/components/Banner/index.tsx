@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import Loader from '../Loader'
 import { useGetCardapiosQuery } from '../../services/api'
 
-import { BannerContainer, Text, TextBold } from './style'
+import * as S from './style'
 
 const Banner = () => {
   const { id } = useParams()
@@ -15,13 +15,13 @@ const Banner = () => {
 
   return (
     <>
-      <BannerContainer style={{ backgroundImage: `url(${data?.capa})` }}>
+      <S.BannerContainer style={{ backgroundImage: `url(${data?.capa})` }}>
         <div className="container">
-          <Text>{data?.tipo}</Text>
-          <TextBold>{data?.titulo}</TextBold>
+          <S.Text>{data?.tipo}</S.Text>
+          <S.TextBold>{data?.titulo}</S.TextBold>
         </div>
         <div className="overlay"></div>
-      </BannerContainer>
+      </S.BannerContainer>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { ButtonCard } from '../Products/style'
 
 import lixeira from '../../assets/images/lixeira.svg'
@@ -31,7 +31,7 @@ export const CartContainer = styled.div`
     text-align: center;
     font-size: 20px;
     font-weight: 900;
-    color: ${cores.bege};
+    color: ${colors.beige};
     p {
       font-size: 16px;
       max-width: 250px;
@@ -40,7 +40,7 @@ export const CartContainer = styled.div`
   }
 `
 export const Sidebar = styled.aside`
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   z-index: 1;
   padding: 32px 8px;
   max-width: 360px;
@@ -52,8 +52,8 @@ export const Sidebar = styled.aside`
     transition: 0.2s;
     cursor: pointer;
     &:hover {
-      background-color: ${darken(0.08, cores.bege)};
-      color: ${darken(0.08, cores.rosa)};
+      background-color: ${darken(0.08, colors.beige)};
+      color: ${darken(0.08, colors.pink)};
     }
   }
 `
@@ -63,13 +63,13 @@ export const Prices = styled.p`
   p {
     font-weight: bold;
     font-size: 14px;
-    color: ${cores.branca};
+    color: ${colors.white};
     margin: 24px 0 16px 0;
   }
 `
 export const CartItem = styled.li`
   display: flex;
-  background: ${cores.bege};
+  background: ${colors.beige};
   padding: 8px;
   position: relative;
   width: 100%;
@@ -83,14 +83,14 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.rosa};
+    color: ${colors.pink};
     font-weight: 900;
     font-size: 18px;
   }
 
   span {
     display: block;
-    color: ${cores.rosa};
+    color: ${colors.pink};
     font-weight: 400;
     font-size: 14px;
     margin-top: 16px;
@@ -114,7 +114,7 @@ export const CartItem = styled.li`
 export const AdressContainer = styled.div`
   font-weight: bold;
   font-size: 14px;
-  color: ${cores.bege};
+  color: ${colors.beige};
   h1 {
     font-size: 16px;
     margin-bottom: 8px;
@@ -131,8 +131,8 @@ export const AdressContainer = styled.div`
       padding: 8px;
       color: black;
       width: 100%;
-      border: 2px solid ${cores.bege};
-      background-color: ${cores.bege};
+      border: 2px solid ${colors.beige};
+      background-color: ${colors.beige};
     }
     .error {
       border: 2px solid red;
@@ -145,31 +145,31 @@ export const AdressContainer = styled.div`
   }
   button {
     border: none;
-    color: ${cores.rosa};
+    color: ${colors.pink};
     font-weight: bold;
     padding: 4px 0;
     width: 100%;
     text-align: center;
     margin-bottom: 8px;
-    background-color: ${cores.bege};
+    background-color: ${colors.beige};
     font-size: 14px;
     transition: 0.2s;
     cursor: pointer;
     &:hover {
-      background-color: ${darken(0.08, cores.bege)};
-      color: ${darken(0.08, cores.rosa)};
+      background-color: ${darken(0.08, colors.beige)};
+      color: ${darken(0.08, colors.pink)};
     }
   }
   .margin-top {
     margin-top: 24px;
   }
   .disabled {
-    background-color: ${lighten(0.1, cores.bege)};
-    color: ${lighten(0.2, cores.rosa)};
+    background-color: ${lighten(0.1, colors.beige)};
+    color: ${lighten(0.2, colors.pink)};
     &:hover {
       cursor: auto;
-      background-color: ${lighten(0.1, cores.bege)};
-      color: ${lighten(0.2, cores.rosa)};
+      background-color: ${lighten(0.1, colors.beige)};
+      color: ${lighten(0.2, colors.pink)};
     }
   }
 `
@@ -179,7 +179,7 @@ export const CardPaymentContainer = styled(AdressContainer)`
   }
 `
 export const OrderContainer = styled.div`
-  color: ${cores.bege};
+  color: ${colors.beige};
   h1 {
     font-weight: bold;
     font-size: 16px;
@@ -192,19 +192,19 @@ export const OrderContainer = styled.div`
   }
   button {
     border: none;
-    color: ${cores.rosa};
+    color: ${colors.pink};
     font-weight: bold;
     padding: 4px 0;
     width: 100%;
     text-align: center;
     margin-bottom: 8px;
-    background-color: ${cores.bege};
+    background-color: ${colors.beige};
     font-size: 14px;
     transition: 0.2s;
     cursor: pointer;
     &:hover {
-      background-color: ${darken(0.08, cores.bege)};
-      color: ${darken(0.08, cores.rosa)};
+      background-color: ${darken(0.08, colors.beige)};
+      color: ${darken(0.08, colors.pink)};
     }
   }
 `

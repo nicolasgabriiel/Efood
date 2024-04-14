@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { ButtonCard } from '../Products/style'
 import { darken } from 'polished'
 
 export const ContainerList = styled.section`
-  background-color: ${cores.begeClaro};
+  background-color: ${colors.lightBeige};
   padding: 56px 0 120px 0;
 `
 
@@ -54,7 +54,7 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
   padding: 32px;
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   display: flex;
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -111,8 +111,8 @@ export const ModalContent = styled.div`
     padding: 4px 8px;
     transition: 0.2s;
     &:hover {
-      background-color: ${darken(0.08, cores.bege)};
-      color: ${darken(0.08, cores.rosa)};
+      background-color: ${darken(0.08, colors.beige)};
+      color: ${darken(0.08, colors.pink)};
     }
   }
 `

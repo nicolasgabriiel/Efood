@@ -3,18 +3,18 @@ import background from '../../assets/images/background-header.svg'
 import logo from '../../assets/images/logo.svg'
 
 import { Logo } from '../../styles'
-import { Title, HeaderContainer } from './style'
+import * as S from './style'
 
 const Header = () => (
   <>
-    <HeaderContainer style={{ backgroundImage: `url(${background})` }}>
+    <S.HeaderContainer style={{ backgroundImage: `url(${background})` }}>
       <Link to={'/'}>
         <h1>
           <Logo src={logo} title="EFOOD" />
         </h1>
       </Link>
-      <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
-    </HeaderContainer>
+      <S.Title>Viva experiências gastronômicas no conforto da sua casa</S.Title>
+    </S.HeaderContainer>
   </>
 )
 

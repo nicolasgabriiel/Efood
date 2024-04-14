@@ -1,10 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  branca: '#fff',
-  rosa: '#E66767',
-  bege: '#FFEBD9',
-  begeClaro: '#FFF8F1'
+export const colors = {
+  white: '#fff',
+  pink: '#E66767',
+  beige: '#FFEBD9',
+  lightBeige: '#FFF8F1'
 }
 
 export const breakpoints = {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { darken } from 'polished'
 
 export const Image = styled.img`
@@ -10,7 +10,7 @@ export const Image = styled.img`
 export const Title = styled.h3`
   font-size: 16px;
   font-weight: 900;
-  color: ${cores.bege};
+  color: ${colors.beige};
   margin: 8px 0;
 `
 export const ButtonCard = styled.button`
@@ -21,8 +21,8 @@ export const ButtonCard = styled.button`
   width: 100%;
   font-weight: bold;
   font-size: 14px;
-  color: ${cores.rosa};
-  background-color: ${cores.bege};
+  color: ${colors.pink};
+  background-color: ${colors.beige};
   cursor: pointer;
 `
 export const Card = styled.li`
@@ -31,19 +31,19 @@ export const Card = styled.li`
   justify-content: flex-start;
   padding: 8px;
   cursor: pointer;
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   transition: 0.5s;
   &:hover {
-    background-color: ${darken(0.08, cores.rosa)};
+    background-color: ${darken(0.08, colors.pink)};
     ${Title} {
-      color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, colors.beige)};
     }
     p {
-      color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, colors.beige)};
     }
     ${ButtonCard} {
-      color: ${darken(0.08, cores.rosa)};
-      background-color: ${darken(0.08, cores.bege)};
+      color: ${darken(0.08, colors.pink)};
+      background-color: ${darken(0.08, colors.beige)};
     }
   }
   @media (max-width: ${breakpoints.tablet}) {

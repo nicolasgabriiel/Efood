@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const ContainerFooter = styled.footer`
   padding: 40px 0;
-  background: ${cores.bege};
+  background: ${colors.beige};
   * {
     margin: 0 auto;
   }
@@ -30,7 +30,7 @@ export const Social = styled.img`
 export const Copywrite = styled.p`
   font-size: 10px;
   line-height: 12px;
-  color: ${cores.rosa};
+  color: ${colors.pink};
   max-width: 480px;
   text-align: center;
   @media (max-width: ${breakpoints.tablet}) {

@@ -1,28 +1,28 @@
-import { getDescricao } from '../../utils/functions'
+import { getDescription } from '../../utils/functions'
 import Description from '../Description'
 
-import { Card, Image, Title, ButtonCard } from './style'
-import { cores } from '../../styles'
+import * as S from './style'
+import { colors } from '../../styles'
 
 type Props = {
-  imagem: string
-  titulo: string
-  descricao: string
+  image: string
+  title: string
+  description: string
 }
 
-const Restaurant = ({ imagem, titulo, descricao }: Props) => {
+const Restaurant = ({ image, title, description }: Props) => {
   return (
     <>
-      <Card>
-        <Image src={imagem} alt="Hioki Sushi" />
-        <Title>{titulo}</Title>
-        <Description color={cores.bege}>
-          {getDescricao(descricao, 170)}
+      <S.Card>
+        <S.Image src={image} alt="Hioki Sushi" />
+        <S.Title>{title}</S.Title>
+        <Description color={colors.beige}>
+          {getDescription(description, 170)}
         </Description>
-        <ButtonCard title={`Ver mais detalhes sobre ${titulo}`}>
+        <S.ButtonCard title={`Ver mais detalhes sobre ${title}`}>
           Mais Detalhes
-        </ButtonCard>
-      </Card>
+        </S.ButtonCard>
+      </S.Card>
     </>
   )
 }

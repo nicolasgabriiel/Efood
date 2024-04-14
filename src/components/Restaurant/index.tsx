@@ -4,17 +4,8 @@ import Description from '../Description'
 import Tag from '../Tag'
 import star from '../../assets/images/star.svg'
 
-import { cores } from '../../styles'
-import {
-  Card,
-  ContainerDescription,
-  ContainerText,
-  ContainerTitle,
-  Image,
-  Star,
-  Title,
-  Infos
-} from './style'
+import { colors } from '../../styles'
+import * as S from './style'
 
 type Props = {
   title: string
@@ -37,32 +28,32 @@ const Restaurant = ({
 }: Props) => {
   return (
     <>
-      <Card>
-        <Infos>
+      <S.Card>
+        <S.Infos>
           {destacado && <Tag>Destaque da semana</Tag>}
           <Tag>{infos}</Tag>
-        </Infos>
-        <Image src={image} alt={title} />
-        <ContainerText>
+        </S.Infos>
+        <S.Image src={image} alt={title} />
+        <S.ContainerText>
           <div>
-            <ContainerTitle>
-              <Title>{title}</Title>
-              <ContainerTitle>
-                <Title>{nota}</Title>
-                <Star src={star} />
-              </ContainerTitle>
-            </ContainerTitle>
-            <ContainerDescription>
-              <Description color={cores.rosa}>{description}</Description>
-            </ContainerDescription>
+            <S.ContainerTitle>
+              <S.Title>{title}</S.Title>
+              <S.ContainerTitle>
+                <S.Title>{nota}</S.Title>
+                <S.Star src={star} />
+              </S.ContainerTitle>
+            </S.ContainerTitle>
+            <S.ContainerDescription>
+              <Description color={colors.pink}>{description}</Description>
+            </S.ContainerDescription>
           </div>
           <Link to={`restaurant/${id}`}>
             <Tag size="big" title={`Saiba mais sobre ${title}`}>
               Saiba mais
             </Tag>
           </Link>
-        </ContainerText>
-      </Card>
+        </S.ContainerText>
+      </S.Card>
     </>
   )
 }

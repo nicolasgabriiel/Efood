@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Title = styled.h1`
   font-size: 36px;
@@ -8,7 +8,7 @@ export const Title = styled.h1`
   max-width: 540px;
   text-align: center;
   margin: 138px auto 0 auto;
-  color: ${cores.rosa};
+  color: ${colors.pink};
   @media (max-width: ${breakpoints.tablet}) {
     margin: 48px auto 0 auto;
     font-size: 22px;

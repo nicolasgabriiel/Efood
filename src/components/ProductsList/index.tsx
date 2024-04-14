@@ -4,37 +4,28 @@ import { useState } from 'react'
 
 import { useGetCardapiosQuery } from '../../services/api'
 import { add, open } from '../../store/reducers/cart'
-import { formataPreco } from '../../utils/functions'
+import { getPriceInBRL } from '../../utils/functions'
 
 import Products from '../Products'
 import Description from '../Description'
 import Loader from '../Loader'
 
-import close from '../../assets/images/close.svg'
+import closeIcon from '../../assets/images/close.svg'
 
 import { ButtonCard } from '../Products/style'
-import { List, ContainerList, Modal, ModalContent } from './style'
-
-export interface Cardapio {
-  id: number
-  foto: string
-  preco: number
-  nome: string
-  descricao: string
-  porcao: string
-}
+import * as S from './style'
 
 const ProductsList = () => {
   const dispatch = useDispatch()
 
   const [isVisible, setIsVisible] = useState(false)
-  const [selectedItem, setSelectedItem] = useState<Cardapio | null>(null)
+  const [selectedItem, setSelectedItem] = useState<Menu | null>(null)
 
   const { id } = useParams()
 
-  const { data: restaurantes } = useGetCardapiosQuery(id || '')
+  const { data: restaurants } = useGetCardapiosQuery(id || '')
 
-  const openModal = (cardapio: Cardapio) => {
+  const openModal = (cardapio: Menu) => {
     setIsVisible(true)
     setSelectedItem(cardapio)
   }
@@ -46,15 +37,15 @@ const ProductsList = () => {
     }
   }
 
-  if (!restaurantes) {
+  if (!restaurants) {
     return <Loader />
   }
   return (
     <>
-      <ContainerList>
+      <S.ContainerList>
         <div className="container">
-          <List>
-            {restaurantes.cardapio.map((cardapio) => (
+          <S.List>
+            {restaurants.cardapio.map((cardapio) => (
               <div
                 key={cardapio.nome}
                 onClick={() => {
@@ -62,20 +53,20 @@ const ProductsList = () => {
                 }}
               >
                 <Products
-                  descricao={cardapio.descricao}
-                  imagem={cardapio.foto}
-                  titulo={cardapio.nome}
+                  description={cardapio.descricao}
+                  image={cardapio.foto}
+                  title={cardapio.nome}
                 ></Products>
               </div>
             ))}
-          </List>
+          </S.List>
         </div>
-      </ContainerList>
-      <Modal className={isVisible ? 'visivel' : ''}>
-        <ModalContent className="container">
+      </S.ContainerList>
+      <S.Modal className={isVisible ? 'visivel' : ''}>
+        <S.ModalContent className="container">
           <div className="close">
             <img
-              src={close}
+              src={closeIcon}
               alt="Ícone de fechar"
               onClick={() => {
                 setIsVisible(false)
@@ -96,18 +87,18 @@ const ProductsList = () => {
                 }}
               >
                 Adicionar ao carrinho -{' '}
-                <span>{formataPreco(selectedItem?.preco)}</span>
+                <span>{getPriceInBRL(selectedItem?.preco)}</span>
               </ButtonCard>
             </div>
           </div>
-        </ModalContent>
+        </S.ModalContent>
         <div
           onClick={() => {
             setIsVisible(false)
           }}
           className="overlay"
         ></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }
