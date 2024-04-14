@@ -1,3 +1,22 @@
+# Ultimas Etapas
+
+-[x] Desenvolver Checkout P1
+-[x] Desenvolver Checkout P2
+-[x] Desenvolver Checkout P3
+-[ ] Enviar Resposta pra API
+-[ ] Padronizar o Projeto para o Inglês
+-[ ] Testar Responsivo
+-[ ] Valdiar Formulário
+-[ ] Usar Mascara no Formulário
+-[ ] Implementar Loaders
+-[ ] Implementar Conceitos visuais pra melhorar a Usabilidade
+-[ ] Adicionar Titulos aos botões
+-[ ] Corrigir Importações do Styled Components
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

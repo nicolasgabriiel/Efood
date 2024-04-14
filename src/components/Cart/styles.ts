@@ -13,7 +13,6 @@ export const Overlay = styled.div`
   background-color: #000;
   opacity: 0.7;
 `
-
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
@@ -28,7 +27,6 @@ export const CartContainer = styled.div`
     display: flex;
   }
 `
-
 export const Sidebar = styled.aside`
   background-color: ${cores.rosa};
   z-index: 1;
@@ -41,7 +39,6 @@ export const Sidebar = styled.aside`
     width: 100%;
   }
 `
-
 export const Prices = styled.p`
   display: flex;
   justify-content: space-between;
@@ -91,5 +88,78 @@ export const CartItem = styled.li`
     bottom: 8px;
     right: 8px;
     cursor: pointer;
+  }
+`
+export const AdressContainer = styled.form`
+  font-weight: bold;
+  font-size: 14px;
+  color: ${cores.bege};
+  h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .formGroup {
+    margin-top: 8px;
+    display: inline-block;
+    width: 100%;
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input {
+      padding: 8px;
+      color: black;
+      width: 100%;
+      border: none;
+      background-color: ${cores.bege};
+    }
+  }
+  .display-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 34px;
+  }
+  button {
+    border: none;
+    color: ${cores.rosa};
+    font-weight: bold;
+    padding: 4px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+    background-color: ${cores.bege};
+    font-size: 14px;
+  }
+  .margin-top {
+    margin-top: 24px;
+  }
+`
+export const CardPaymentContainer = styled(AdressContainer)`
+  .max-width {
+    max-width: 90px;
+  }
+`
+export const OrderContainer = styled.div`
+  color: ${cores.bege};
+  h1 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+  button {
+    border: none;
+    color: ${cores.rosa};
+    font-weight: bold;
+    padding: 4px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+    background-color: ${cores.bege};
+    font-size: 14px;
   }
 `

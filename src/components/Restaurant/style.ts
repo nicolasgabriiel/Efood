@@ -22,6 +22,10 @@ export const ContainerText = styled.div`
   border-bottom: 1px solid ${cores.rosa};
   border-right: 1px solid ${cores.rosa};
   border-left: 1px solid ${cores.rosa};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 218px);
 `
 
 export const ContainerTitle = styled.div`

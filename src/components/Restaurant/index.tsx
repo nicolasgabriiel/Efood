@@ -44,17 +44,18 @@ const Restaurant = ({
         </Infos>
         <Image src={image} alt={title} />
         <ContainerText>
-          <ContainerTitle>
-            <Title>{title}</Title>
+          <div>
             <ContainerTitle>
-              <Title>{nota}</Title>
-              <Star src={star} />
+              <Title>{title}</Title>
+              <ContainerTitle>
+                <Title>{nota}</Title>
+                <Star src={star} />
+              </ContainerTitle>
             </ContainerTitle>
-          </ContainerTitle>
-          <ContainerDescription>
-            <Description color={cores.rosa}>{description}</Description>
-          </ContainerDescription>
-
+            <ContainerDescription>
+              <Description color={cores.rosa}>{description}</Description>
+            </ContainerDescription>
+          </div>
           <Link to={`restaurant/${id}`}>
             <Tag size="big">Saiba mais</Tag>
           </Link>

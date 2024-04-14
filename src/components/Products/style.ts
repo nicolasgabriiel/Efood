@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Card = styled.li`
   display: flex;
@@ -7,12 +7,15 @@ export const Card = styled.li`
   justify-content: flex-start;
   padding: 8px;
   background-color: ${cores.rosa};
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 340px;
+  }
 `
 
 export const Image = styled.img`
   display: block;
   width: 100%;
-  height: 168px;
+  height: 180px;
 `
 export const Title = styled.h3`
   font-size: 16px;

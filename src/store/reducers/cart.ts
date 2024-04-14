@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { Cardapio } from '../../utils/classes'
-
 type CartState = {
   items: Cardapio[]
   isOpen: boolean

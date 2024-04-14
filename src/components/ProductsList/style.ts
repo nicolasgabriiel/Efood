@@ -9,7 +9,7 @@ export const ContainerList = styled.section`
 
 export const List = styled.ul`
   display: grid;
-  grid-gap: 32px;
+  gap: 32px;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: stretch;
   @media (max-width: ${breakpoints.desktop}) {
@@ -18,6 +18,9 @@ export const List = styled.ul`
 
   @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 export const Modal = styled.div`
