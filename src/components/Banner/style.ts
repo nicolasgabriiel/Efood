@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const BannerContainer = styled.div`
   background-position: center;
@@ -27,6 +28,9 @@ export const Text = styled.h3`
   font-size: 32px;
   font-weight: 100;
   margin-bottom: 156px;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 22px;
+  }
 `
 export const TextBold = styled(Text)`
   font-weight: 900;

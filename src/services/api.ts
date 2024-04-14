@@ -10,10 +10,21 @@ const api = createApi({
     }),
     getCardapios: builder.query<Restaurant, string>({
       query: (id) => `restaurantes/${id}`
+    }),
+    purchase: builder.mutation<PurchaseResponse, PurchasePayload>({
+      query: (body) => ({
+        url: 'checkout',
+        method: 'POST',
+        body
+      })
     })
   })
 })
 
-export const { useGetCardapiosQuery, useGetRestaurantsQuery } = api
+export const {
+  useGetCardapiosQuery,
+  useGetRestaurantsQuery,
+  usePurchaseMutation
+} = api
 
 export default api

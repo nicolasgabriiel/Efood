@@ -26,6 +26,17 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
+  .empty {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: ${cores.bege};
+    p {
+      font-size: 16px;
+      max-width: 250px;
+      margin: 20px auto;
+    }
+  }
 `
 export const Sidebar = styled.aside`
   background-color: ${cores.rosa};
@@ -90,7 +101,7 @@ export const CartItem = styled.li`
     cursor: pointer;
   }
 `
-export const AdressContainer = styled.form`
+export const AdressContainer = styled.div`
   font-weight: bold;
   font-size: 14px;
   color: ${cores.bege};
@@ -110,8 +121,11 @@ export const AdressContainer = styled.form`
       padding: 8px;
       color: black;
       width: 100%;
-      border: none;
+      border: 2px solid ${cores.bege};
       background-color: ${cores.bege};
+    }
+    .error {
+      border: 2px solid red;
     }
   }
   .display-flex {

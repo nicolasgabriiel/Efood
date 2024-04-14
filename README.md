@@ -3,11 +3,11 @@
 -[x] Desenvolver Checkout P1
 -[x] Desenvolver Checkout P2
 -[x] Desenvolver Checkout P3
--[ ] Enviar Resposta pra API
+-[x] Enviar Resposta pra API
 -[ ] Padronizar o Projeto para o Inglês
--[ ] Testar Responsivo
--[ ] Valdiar Formulário
--[ ] Usar Mascara no Formulário
+-[x] Testar Responsivo
+-[x] Valdiar Formulário
+-[x] Usar Mascara no Formulário
 -[ ] Implementar Loaders
 -[ ] Implementar Conceitos visuais pra melhorar a Usabilidade
 -[ ] Adicionar Titulos aos botões

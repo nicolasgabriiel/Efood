@@ -17,12 +17,7 @@ declare type Cardapio = {
   porcao: string
 }
 declare type PurchasePayload = {
-  products: [
-    {
-      id: number
-      price: number
-    }
-  ]
+  products: Product[]
   delivery: {
     receiver: string
     address: {
@@ -44,4 +39,11 @@ declare type PurchasePayload = {
       }
     }
   }
+}
+declare type Product = {
+  id: number
+  price: number
+}
+declare type PurchaseResponse = {
+  orderId: string
 }
