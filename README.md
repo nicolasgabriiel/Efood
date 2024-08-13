@@ -16,9 +16,11 @@ A página funciona consumindo e enviando dados para uma API externa.
 ![Design Desktop](./src//assets/readme/efood3.png)
 
 ## Design Mobile
-![Design Mobile](./src//assets/readme/efood4.png)
-![Design Mobile](./src//assets/readme/efood5.png)
-![Design Mobile](./src//assets/readme/efood6.png)
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <img src="./src//assets/readme/efood4.png" alt="Design Mobile" style="width: 30%;">
+  <img src="./src//assets/readme/efood4.png" alt="Design Mobile" style="width: 30%;">
+  <img src="./src//assets/readme/efood4.png" alt="Design Mobile" style="width: 30%;">
+</div>
 
 # Tecnologias utilizadas
 
