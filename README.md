@@ -11,14 +11,14 @@ A página funciona consumindo e enviando dados para uma API externa.
 
 
 ## Design Desktop
-![Design Desktop](https://i.postimg.cc/qvVqBX7h/efood1.png)
-![Design Desktop](https://i.postimg.cc/QtyN2cPM/efood2.png)
-![Design Desktop](https://i.postimg.cc/k44XYTTZ/efood3.png)
+![Design Desktop](./src//assets/readme/efood1.png)
+![Design Desktop](./src//assets/readme/efood2.png)
+![Design Desktop](./src//assets/readme/efood3.png)
 
 ## Design Mobile
-![Design Mobile](https://i.postimg.cc/YStSYrYt/efood4.png)
-![Design Mobile](https://i.postimg.cc/KYQ856DB/efood5.png)
-![Design Mobile](https://i.postimg.cc/15sgQr7W/efood6.png)
+![Design Mobile](./src//assets/readme/efood4.png)
+![Design Mobile](./src//assets/readme/efood5.png)
+![Design Mobile](./src//assets/readme/efood6.png)
 
 # Tecnologias utilizadas
 
