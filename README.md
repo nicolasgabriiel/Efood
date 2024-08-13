@@ -1,67 +1,49 @@
-# Ultimas Etapas
+# Efood
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/nicolasgabriiel/Efood/blob/main/LICENSE)
 
--[x] Desenvolver Checkout P1
--[x] Desenvolver Checkout P2
--[x] Desenvolver Checkout P3
--[x] Enviar Resposta pra API
--[ ] Padronizar o Projeto para o Inglês
--[x] Testar Responsivo
--[x] Valdiar Formulário
--[x] Usar Mascara no Formulário
--[x] Implementar Loaders
--[x] Implementar Conceitos visuais pra melhorar a Usabilidade
-  -[x] Hover
-  -[x] Disabled
--[x] Adicionar Titulos aos botões
--[ ] Corrigir Importações do Styled Components
+# Sobre o projeto
+
+O projeto envolve o desenvolvimento de uma página de delivery que agrega diversos restaurantes e uma ampla variedade de opções de comidas.
+
+A página é equipada com menus detalhados com descrições e imagens dos pratos, e um carrinho de compras intuitivo. O design é responsivo, garantindo uma experiência de usuário otimizada tanto em dispositivos móveis quanto em desktops.
+
+A página funciona consumindo e enviando dados para uma API externa.
 
 
+## Design Desktop
+![Design Desktop](https://i.postimg.cc/qvVqBX7h/efood1.png)
+![Design Desktop](https://i.postimg.cc/QtyN2cPM/efood2.png)
+![Design Desktop](https://i.postimg.cc/k44XYTTZ/efood3.png)
 
+## Design Mobile
+![Design Mobile](https://i.postimg.cc/YStSYrYt/efood4.png)
+![Design Mobile](https://i.postimg.cc/KYQ856DB/efood5.png)
+![Design Mobile](https://i.postimg.cc/15sgQr7W/efood6.png)
 
+# Tecnologias utilizadas
 
-# Getting Started with Create React App
+- React
+- Typescript
+- Redux
+- SyledComponents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Como executar o projeto
 
-## Available Scripts
+Pré-requisitos: npm
 
-In the project directory, you can run:
+```bash
+# clonar repositório
+git clone https://github.com/nicolasgabriiel/Efood
 
-### `npm start`
+# baixar as dependências
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# executar o projeto
+npm run start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Autor
 
-### `npm test`
+Nicolas Gabriel da Silva
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://www.linkedin.com/in/nicolasgabriiel/
